@@ -108,3 +108,11 @@ function listarTarefasMaiusculas() {
     console.log("📢 Lista de Tarefas em Maiúsculas:", tarefasMaiusculas);
 }
 
+// 8️⃣ Calcular total de tarefas concluídas
+function calcularTarefasConcluidas() {
+    const totalConcluidas = tarefas.reduce((contador, tarefa) =>
+        tarefa.status === "concluida" ? contador + 1 : contador, 0
+    );
+
+    alert(`📊 Total de tarefas concluídas: ${totalConcluidas}`);
+}
