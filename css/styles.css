@@ -115,5 +115,76 @@ button:hover {
     display: flex;
     align-items: center;
 }
+/* Layout responsivo */
+.task-columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    flex-grow: 1;
+}
+
+@media (min-width: 768px) { 
+    .task-columns {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .task-column {
+        width: 30%;
+    }
+}
+
+/* Estilo das colunas */
+.task-column {
+    width: 80%;
+    background-color: #D3D3D3;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-column:hover {
+    background-color: #B0B0B0;
+}
+
+/* Modo escuro */
+body.modo-escuro .task-column {
+    background-color: #555;
+}
+
+/* Estilo das listas */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Tarefas */
+li {
+    background-color: #E0E0E0;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Animação ao adicionar */
+.adicionada {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Modo escuro nas tarefas */
+body.modo-escuro li {
+    background-color: #666;
+}
+
+/* Filtro oculto por padrão */
+.hidden {
+    display: none;
+}
+
 
 
