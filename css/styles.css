@@ -46,3 +46,34 @@ footer {
 body.modo-escuro footer {
     background-color: #1c2525;
 }
+/* Botão modo escuro */
+.modo-escuro-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.3s ease;
+    outline: none; /* Remove a borda azul */
+    box-shadow: none; /* Remove qualquer sombra */
+}
+
+.modo-escuro-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Remove a borda azul ao clicar */
+.modo-escuro-btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Seção adicionar tarefa */
+.add-task-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-right: 10px;
+}
+
