@@ -90,3 +90,15 @@ function atualizarStatusTarefa(id, novoStatus) {
     renderizarTarefas();
 }
 
+// 6️⃣ Criar uma função para filtrar apenas tarefas pendentes
+function filtrarPendentes() {
+    const tarefasPendentes = tarefas.filter(tarefa => tarefa.status === "pendente");
+    listaPendentes.innerHTML = "";
+
+    tarefasPendentes.forEach(tarefa => {
+        const li = document.createElement("li");
+        li.textContent = tarefa.titulo;
+        listaPendentes.appendChild(li);
+    });
+}
+
