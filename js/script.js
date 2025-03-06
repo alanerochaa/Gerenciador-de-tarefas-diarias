@@ -102,3 +102,9 @@ function filtrarPendentes() {
     });
 }
 
+// 7️⃣ Exibir a lista de títulos em maiúsculas no console
+function listarTarefasMaiusculas() {
+    const tarefasMaiusculas = tarefas.map(tarefa => tarefa.titulo.toUpperCase());
+    console.log("📢 Lista de Tarefas em Maiúsculas:", tarefasMaiusculas);
+}
+
