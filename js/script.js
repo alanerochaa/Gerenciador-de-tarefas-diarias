@@ -129,3 +129,11 @@ function exibirDetalhesTarefa(id) {
     }
 }
 
+// 🔟 Criar uma função que aceita parâmetros e cria uma nova tarefa
+function criarTarefa(titulo, status = "pendente") {
+    return {
+        id: Date.now(),
+        titulo,
+        status
+    };
+}
