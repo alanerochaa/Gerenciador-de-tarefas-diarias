@@ -1,3 +1,5 @@
+
+
 // 1️⃣ Criar um array para armazenar as tarefas como objetos e adicionar uma tarefa inicial
 let tarefas = [
     { id: 1, titulo: "Finalizar o projeto", status: "pendente" }
@@ -27,7 +29,7 @@ function adicionarTarefa() {
         inputTarefa.value = "";
         renderizarTarefas();
     } else {
-        alert("⚠️ Digite uma tarefa válida.");
+        alert("❌ Digite uma tarefa válida.");
     }
 }
 
@@ -115,6 +117,7 @@ function calcularTarefasConcluidas() {
     );
 
     alert(`📊 Total de tarefas concluídas: ${totalConcluidas}`);
+
 }
 
 // 9️⃣ Exibir detalhes da tarefa
@@ -128,6 +131,7 @@ function exibirDetalhesTarefa(id) {
         alert("❌ Tarefa não encontrada!");
     }
 }
+
 
 // 🔟 Criar uma função que aceita parâmetros e cria uma nova tarefa
 function criarTarefa(titulo, status = "pendente") {
@@ -149,6 +153,7 @@ function adicionarMultiplasTarefas(...novasTarefas) {
 
     renderizarTarefas();
     alert(`✅ ${novasTarefas.length} tarefas adicionadas com sucesso!`);
+    
 }
 
 // 1️⃣2️⃣ Evento para remover todas as tarefas concluídas
@@ -158,3 +163,54 @@ function removerTarefasConcluidas() {
     alert("🗑️ Tarefas concluídas removidas!");
 }
 
+// Função para editar a tarefa diretamente na lista
+function editarTarefa(id, li) {
+    // Cria o input e coloca no lugar do texto da tarefa
+    const inputEditar = document.createElement("input");
+    inputEditar.type = "text";
+    inputEditar.value = getTarefaPorId(id).titulo;
+    
+    li.innerHTML = "";
+    li.appendChild(inputEditar);
+
+    // Cria o botão para salvar a edição
+    const botaoSalvar = document.createElement("button");
+    botaoSalvar.textContent = "Salvar ✔️";
+    botaoSalvar.addEventListener("click", () => salvarEdicaoTarefa(id, inputEditar.value, li));
+    li.appendChild(botaoSalvar);
+}
+
+// Função para salvar a edição de uma tarefa
+function salvarEdicaoTarefa(id, novoTitulo, li) {
+    if (novoTitulo.trim() !== "") {
+        tarefas = tarefas.map(tarefa => 
+            tarefa.id === id ? { ...tarefa, titulo: novoTitulo.trim() } : tarefa
+        );
+        renderizarTarefas();  // Re-renderiza as tarefas após a edição
+    }
+}
+
+// Função para excluir a tarefa
+function excluirTarefa(id) {
+    const confirmarExclusao = confirm("Você tem certeza que deseja excluir esta tarefa?");
+    
+    if (confirmarExclusao) {
+        tarefas = tarefas.filter(tarefa => tarefa.id !== id);
+        renderizarTarefas();  // Re-renderiza as tarefas após a exclusão
+    }
+}
+
+// Função auxiliar para obter a tarefa pelo ID
+function getTarefaPorId(id) {
+    return tarefas.find(tarefa => tarefa.id === id);
+}
+
+// Adicionar eventos aos botões
+botaoAdicionar.addEventListener("click", adicionarTarefa);
+botaoFiltrar.addEventListener("click", filtrarPendentes);
+
+// Renderizar lista inicial ao carregar a página
+renderizarTarefas();
+
+// Teste rápido: Adicionar várias tarefas de uma vez
+adicionarMultiplasTarefas("Revisar POO", "Estudar SQL", "Aprender React");
