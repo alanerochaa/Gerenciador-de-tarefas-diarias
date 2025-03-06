@@ -116,3 +116,16 @@ function calcularTarefasConcluidas() {
 
     alert(`📊 Total de tarefas concluídas: ${totalConcluidas}`);
 }
+
+// 9️⃣ Exibir detalhes da tarefa
+function exibirDetalhesTarefa(id) {
+    const tarefa = tarefas.find(t => t.id === id);
+
+    if (tarefa) {
+        const { titulo, status } = tarefa;
+        alert(`📌 Tarefa: ${titulo}\n🔄 Status: ${status === "concluida" ? "Concluída" : status}`);
+    } else {
+        alert("❌ Tarefa não encontrada!");
+    }
+}
+
