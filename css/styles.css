@@ -76,4 +76,44 @@ body.modo-escuro footer {
     flex-wrap: wrap;
     margin-right: 10px;
 }
+/* Inputs e botões */
+input, button {
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #5a9bd5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 120px;
+    padding: 12px;
+}
+
+button:hover {
+    background-color: #2E3A3D;
+    transform: scale(1.1);
+}
+
+/* Ajuste do botão de filtro */
+.filter-btns {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+/* Barra de filtro oculta por padrão */
+.barraFiltro {
+    display: none;
+    margin-left: 10px;
+}
+
+.barraFiltro.show {
+    display: flex;
+    align-items: center;
+}
+
 
