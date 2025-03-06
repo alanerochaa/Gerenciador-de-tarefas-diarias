@@ -14,5 +14,29 @@
             <button id="modo-escuro-btn" aria-label="Alternar modo escuro">🌙</button>
         </header>
 
+            <!-- Seção para adicionar tarefas -->
+    <section class="add-task-section">
+        <h2>Adicionar Tarefa:</h2>
+        <input type="text" id="tarefa-input" placeholder="Digite sua nova tarefa">
+        
+        <!-- Botões alinhados lado a lado -->
+        <div class="task-actions">
+            <button id="adicionar-btn">Adicionar</button>
+            <button id="filtrar-btn">Filtrar Pendente</button>
+        </div>
+
+        <!-- Filtro de tarefas (inicialmente oculto) -->
+        <div id="barraFiltro" class="hidden">
+            <label for="filtro-status">Filtrar por status:</label>
+            <select id="filtro-status">
+                <option value="pendente">Pendente</option>
+                <option value="em-andamento">Em Andamento</option>
+                <option value="concluido">Concluído</option>
+            </select>
+            <button id="aplicar-filtro">Aplicar</button>
+        </div>
+    </section>
+
+
         
     
