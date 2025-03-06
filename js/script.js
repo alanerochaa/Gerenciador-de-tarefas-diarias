@@ -137,3 +137,24 @@ function criarTarefa(titulo, status = "pendente") {
         status
     };
 }
+
+// 1️⃣1️⃣ Criar uma função para adicionar múltiplas tarefas usando REST
+function adicionarMultiplasTarefas(...novasTarefas) {
+    for (const titulo of novasTarefas) {
+        if (titulo.trim() !== "") {
+            const novaTarefa = criarTarefa(titulo);
+            tarefas.push(novaTarefa);
+        }
+    }
+
+    renderizarTarefas();
+    alert(`✅ ${novasTarefas.length} tarefas adicionadas com sucesso!`);
+}
+
+// 1️⃣2️⃣ Evento para remover todas as tarefas concluídas
+function removerTarefasConcluidas() {
+    tarefas = tarefas.filter(tarefa => tarefa.status !== "concluida");
+    renderizarTarefas();
+    alert("🗑️ Tarefas concluídas removidas!");
+}
+
