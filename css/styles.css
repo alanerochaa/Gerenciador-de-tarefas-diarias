@@ -15,3 +15,34 @@ body.modo-escuro {
     background-color: #333;
     color: #fff;
 }
+
+/* Cabeçalho */
+header {
+    background-color: #4682b4 !important;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: none;
+    border: none;
+}
+
+/* Rodapé fixo */
+footer {
+    background-color: #4682b4 !important;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    margin-top: auto;
+    padding: 8px 0;
+    box-shadow: none;
+    border: none;
+}
+
+/* Modo escuro no rodapé */
+body.modo-escuro footer {
+    background-color: #1c2525;
+}
