@@ -1,0 +1,17 @@
+/* Configuração geral */
+html, body {
+    font-family: Arial, sans-serif;
+    background-color: #F0F0F0;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Modo escuro */
+body.modo-escuro {
+    background-color: #333;
+    color: #fff;
+}
