@@ -82,3 +82,11 @@ function renderizarTarefas() {
     listarTarefasMaiusculas();
 }
 
+// 5️⃣ Função para atualizar o status de uma tarefa
+function atualizarStatusTarefa(id, novoStatus) {
+    tarefas = tarefas.map(tarefa =>
+        tarefa.id === id ? { ...tarefa, status: novoStatus } : tarefa
+    );
+    renderizarTarefas();
+}
+
